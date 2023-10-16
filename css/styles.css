@@ -1,0 +1,271 @@
+:root {
+    --primary-color: #007BFF;
+    --hover-color: #0056b3;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #003366;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.logo img {
+    width: 500px;  /* Adjust as needed */
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    margin: 10px 0;
+}
+
+p {
+    margin: 15px 0;
+}
+
+button {
+    background-color: #0099cc;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0077a3;
+}
+
+.instruction {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* INTERESTS STYLING */
+
+/* Hiding the hidden class as per your HTML */
+.hidden {
+    display: none;
+}
+
+/* Styling the label at the top */
+#question3 > label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* Organizing the choices in a grid layout */
+.choices {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 columns for choices */
+    gap: 0.5rem 1rem;  /* vertical and horizontal gap */
+    margin: 20px 0;
+}
+
+/* Styling the checkboxes - hiding the default checkbox and using labels for custom appearance */
+.choices input[type="checkbox"],
+.choices input[type="radio"] {
+    display: none;
+}
+
+.choices label {
+    display: block;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover effect for labels */
+.choices label:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* Show a different style when a checkbox is checked */
+.choices input[type="checkbox"]:checked + label,
+.choices input[type="radio"]:checked + label {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* Styling the submit button */
+input[type="submit"] {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--hover-color);
+}
+
+/* 4TH QUESTION STYLING */
+
+.choices label {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    transition: border-color 0.3s ease;
+}
+
+.choices label:hover {
+    cursor: pointer;
+    border-color: var(--primary-color);
+}
+
+/* 6TH QUESTION STYLING */
+
+.question-gif {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+}
+
+/* 7TH QUESTION STYLING */
+
+#question7 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+#question7.hidden { /* I almost went crazy on this one because I couldn't find the hidden class in the HTML */
+    display: none;
+}
+
+.image-option {
+    flex: 0 0 calc(25% - 10px);
+    margin: 5px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+    overflow: hidden; /* Ensures the image fits within the block */
+}
+
+.image-option:hover {
+    border-color: #666;
+}
+
+.image-option img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+.image-option.selected {
+    border: 3px solid #007BFF;  /* blue border for selected image */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* subtle shadow for emphasis */
+}
+
+
+#question7 input[type="submit"] {
+    flex-basis: 25%;
+    margin-top: 20px; /* Adjust as needed */
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#question7 input[type="submit"]:hover {
+    background-color: var(--secondary-color);
+}
+
+@media (max-width: 600px) {
+    .image-option {
+        flex-basis: 100%;
+    }
+}
+
+/* 9TH QUESTION STYLING SIMILAR TO THE 7TH with div id="question9" */
+
+#question9 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+#question9.hidden { /* I almost went crazy on this one because I couldn't find the hidden class in the HTML */
+    display: none;
+}
+
+.image-option {
+    flex: 0 0 calc(25% - 10px);
+    margin: 5px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+    overflow: hidden; /* Ensures the image fits within the block */
+}
+
+.image-option:hover {
+    border-color: #666;
+}
+
+.image-option img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+.image-option.selected {
+    border: 3px solid #007BFF;  /* blue border for selected image */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* subtle shadow for emphasis */
+}
+
+
+#question9 input[type="submit"] {
+    flex-basis: 25%;
+    margin-top: 20px; /* Adjust as needed */
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#question9 input[type="submit"]:hover {
+    background-color: var(--secondary-color);
+}
+
+@media (max-width: 600px) {
+    .image-option {
+        flex-basis: 100%;
+    }
+}

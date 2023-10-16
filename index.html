@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periospot Quiz</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- First Question -->
+        <div class="logo">
+            <img src="images/Logo blanco-01.png" alt="Periospot Logo">
+            <h1>Periospot</h1>
+        </div>
+        <h2>Do you want to test your skills?</h2>
+        <p>Depending on the results, we can recommend you articles, videos, online learning, books, ebooks, and other content.</p>
+        <button onclick="startQuiz()">Let's start!</button>
+        <p class="instruction">Press Enter &rarr;</p>
+    </div>
+
+    
+
+    <form id="quizForm" style="display: none;">
+        <!-- Second Question -->
+        <label for="firstName">Before we start, can we get your first name?</label>
+        <input type="text" id="firstName" name="firstName" placeholder="Type your answer here...">
+        <br><br>
+         
+        <input type="submit" id="submitQuizForm" value="Submit">
+    </form>
+
+    <!-- Third Question -->
+    <div id="question3" class="hidden">
+        <label for="areasOfInterest">What's your area of interest, <span id="userNameDisplay"></span>?</label>
+        <div class="choices">
+        <input type="checkbox" id="periodontics" name="interest" value="Periodontics">
+        <label for="periodontics">Periodontics</label>
+
+        <input type="checkbox" id="implantDentistry" name="interest" value="Implant Dentistry">
+        <label for="implantDentistry">Implant Dentistry</label>
+
+        <input type="checkbox" id="guidedBoneRegeneration" name="interest" value="Guided Bone Regeneration">
+        <label for="guidedBoneRegeneration">Guided Bone Regeneration</label>
+
+        <input type="checkbox" id="socialMediaMarketing" name="interest" value="Social Media & Online Marketing in Dentistry">
+        <label for="socialMediaMarketing">Social Media & Online Marketing in Dentistry</label>
+
+        <input type="checkbox" id="digitalDentistry" name="interest" value="Digital Dentistry">
+        <label for="digitalDentistry">Digital Dentistry</label>
+
+        <input type="checkbox" id="aestheticDentistry" name="interest" value="Aesthetic Dentistry">
+        <label for="aestheticDentistry">Aesthetic Dentistry</label>
+
+        <input type="checkbox" id="other" name="areasOfInterest" value="Other">
+        <label for="other">Other</label>
+        </div>
+        <input type="submit" value="Submit">
+    </div>
+    <br><br>
+
+    <!-- Fourth Question -->
+    <div id="question4" class="hidden">
+        <p>Nice to meet you <span id="userNameDisplay"></span>, thanks for taking the time to test your skills. Now, who was the first researcher that described biological width in implants?</p>
+        <div class="choices">
+            <input type="radio" id="abrahamsson" name="researcher" value="Abrahamsson">
+            <label for="abrahamsson">A. Abrahamsson</label>
+
+            <input type="radio" id="albrektsson" name="researcher" value="Albrektsson">
+            <label for="albrektsson">B. Albrektsson</label>
+
+            <input type="radio" id="branemark" name="researcher" value="Branemark">
+            <label for="branemark">C. Branemark</label>
+
+            <input type="radio" id="berglundh" name="researcher" value="Berglundh">
+            <label for="berglundh">D. Berglundh</label>
+
+            <input type="radio" id="jordan" name="researcher" value="Michael Jordan">
+            <label for="jordan">E. Michael Jordan</label>
+        </div>
+        <input type="submit" value="Submit">
+    </div>
+    <br><br>
+
+    <!-- Fifth Question -->
+    <div id="question5" class="hidden">
+        <h2>Immediate implants...</h2>
+        <div class="choices">
+            <input type="radio" id="choiceA" name="immediateImplants" value="Are dangerous">
+            <label for="choiceA">Are dangerous</label>
+            
+            <input type="radio" id="choiceB" name="immediateImplants" value="Never achieve an optimal aesthetic result">
+            <label for="choiceB">Never achieve an optimal aesthetic result</label>
+            
+            <input type="radio" id="choiceC" name="immediateImplants" value="Provide a new blood supply to the surrounding bone">
+            <label for="choiceC">Provide a new blood supply to the surrounding bone</label>
+            
+            <input type="radio" id="choiceD" name="immediateImplants" value="None of the above">
+            <label for="choiceD">None of the above</label>
+            
+            <input type="radio" id="choiceE" name="immediateImplants" value="All of the above">
+            <label for="choiceE">All of the above</label>
+        </div>
+        <input type="submit" value="Submit">
+    </div>
+    <br><br>
+
+    <!-- Sixth Question -->
+    <div id="question6" class="quiz-question hidden question5">
+        <h2>6. Regarding marginal bone loss, one of the below statements is true:</h2>
+        <img src="images/QuickTime Player - Ericsson 2.mov 2023-10-16 at 12.49.38 PM.gif" alt="Gif relating to marginal bone loss" class="question-gif">
+        <div class="choices">
+            <input type="radio" id="optionA6" name="q6" value="A">
+            <label for="optionA6">A) Is not important from a biological and clinical point of view</label>
+
+            <input type="radio" id="optionB6" name="q6" value="B">
+            <label for="optionB6">B) Platform switching can be an option to reduce MBL</label>
+
+            <input type="radio" id="optionC6" name="q6" value="C">
+            <label for="optionC6">C) One-piece implants usually have better biological behavior than bone level implants</label>
+
+            <input type="radio" id="optionD6" name="q6" value="D">
+            <label for="optionD6">D) Micromotion between the implant and the abutment does not affect the MBL</label>
+
+            <input type="radio" id="optionE6" name="q6" value="E">
+            <label for="optionE6">E) B and C are correct</label>
+        </div>
+        <input type="submit" value="Submit">
+    </div>
+    <br><br>
+    
+    <!-- Seventh Question -->
+    <div id="question7" class="quiz-question hidden">
+        <h2>7. So far so good <span id="userNameDisplay"></span>, but let’s go with an easy one: What is the recommended distance between two implants?</h2>
+        <div class="image-option" data-answer="A" data-radio="optionA7">
+            <img src="images/1mm.png" alt="1 mm option">
+            <p>A) 1 mm</p>
+        </div>
+        <div class="image-option" data-answer="B" data-radio="optionB7">
+            <img src="images/3mm.png" alt="3 mm option">
+            <p>B) 3 mm</p>
+        </div>
+        <div class="image-option" data-answer="C" data-radio="optionC7">
+            <img src="images/6mm.png" alt="6 mm option">
+            <p>C) 6 mm</p>
+        </div>
+        <div class="image-option" data-answer="D" data-radio="optionD7">
+            <img src="images/bridge.png" alt="Tooth-borne bridge option">
+            <p>D) We should avoid implants and always perform a tooth-borne bridge</p>
+        </div>
+        <!-- Hidden radio buttons -->
+        <input type="radio" id="optionA7" name="q7" value="A" hidden>
+        <input type="radio" id="optionB7" name="q7" value="B" hidden>
+        <input type="radio" id="optionC7" name="q7" value="C" hidden>
+        <input type="radio" id="optionD7" name="q7" value="D" hidden>
+        <input type="submit" value="Submit">
+    </div>
+    <br><br>
+
+    <!-- Eighth Question -->
+    <div id="question8" class="quiz-question hidden question5">
+        <h2>8. In which cases would you place an implant in a subcrestally position? This question is required.*</h2>
+        <div class="choices">
+            <input type="radio" id="optionA8" name="q8" value="A">
+            <label for="optionA8">A) Always</label>
+
+            <input type="radio" id="optionB8" name="q8" value="B">
+            <label for="optionB8">B) Never</label>
+
+            <input type="radio" id="optionC8" name="q8" value="C">
+            <label for="optionC8">C) Depends on the implant prosthetic connection</label>
+
+            <input type="radio" id="optionD8" name="q8" value="D">
+            <label for="optionD8">D) It depends on the implant surface</label>
+        </div>
+        <input type="submit" value="Submit">
+    </div>
+
+    <!-- Ninth Question -->
+    <div id="question9" class="quiz-question hidden">
+        <h2>9. What is the ideal thickness of the buccal bone wall after placing an implant, <span id="userNameDisplay"></span>?</h2>
+        
+        <div class="image-option" data-answer="A" data-radio="optionA9">
+            <img src="images/buccal1mm.png" alt="1 mm option">
+            <p>A) 1 mm</p>
+        </div>
+        <div class="image-option" data-answer="B" data-radio="optionB9">
+            <img src="images/buccal2mm.png" alt="2 mm option">
+            <p>B) 2 mm</p>
+        </div>
+        <div class="image-option" data-answer="C" data-radio="optionC9">
+            <img src="images/softissue.png" alt="No bone needed. Soft tissue is ok option">
+            <p>C) No bone needed. Soft tissue is ok.</p>
+        </div>
+        <div class="image-option" data-answer="D" data-radio="optionD9">
+            <img src="images/bucall05mm.png" alt="0.5 mm option">
+            <p>D) 0.5 mm</p>
+        </div>
+        
+        <!-- Hidden radio buttons -->
+        <input type="radio" id="optionA9" name="q9" value="A" hidden>
+        <input type="radio" id="optionB9" name="q9" value="B" hidden>
+        <input type="radio" id="optionC9" name="q9" value="C" hidden>
+        <input type="radio" id="optionD9" name="q9" value="D" hidden>
+        <input type="submit" value="Submit">
+    </div>
+    <br><br>
+
+    
+
+
+</body>
+</html>
