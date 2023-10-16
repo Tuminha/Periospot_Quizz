@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', (event) => {
+    let score = 0;  // Initialize score
+
     // Add event listeners for the submit buttons of each question
     document.querySelector(".container button").addEventListener('click', startQuiz);
 
@@ -9,6 +11,34 @@ document.addEventListener('DOMContentLoaded', (event) => {
     document.querySelector("#question7 input[type='submit']").addEventListener('click', handleSeventhQuestionSubmit);
     document.querySelector("#question8 input[type='submit']").addEventListener('click', handleEighthQuestionSubmit);
     document.querySelector("#question9 input[type='submit']").addEventListener('click', handleNinthQuestionSubmit);
+
+    function startQuiz() {
+        // Hide the introductory content
+        document.querySelector(".container").style.display = "none";
+    
+        // Show the form
+        document.getElementById("quizForm").style.display = "block";
+    
+        // Attach the form submission event listener
+        document.getElementById("quizForm").addEventListener("submit", function(event){
+            event.preventDefault();
+            const firstName = document.getElementById("firstName").value;
+            console.log(`First Name: ${firstName}`);
+            // Use the values as required, for example, to personalize the experience
+    
+            // Hide the form
+            document.getElementById("quizForm").style.display = "none";
+    
+            // Show the third question
+            showThirdQuestion(firstName); 
+        });
+    }
+
+    // When second question (or another event) is done, show the third question
+    function showThirdQuestion(firstName) {
+        document.getElementById("question3").classList.remove("hidden");
+        document.getElementById("userNameDisplay").textContent = firstName;
+    }
 
     function handleThirdQuestionSubmit(e) {
         console.log('handleThirdQuestionSubmit called');  // Debugging line
@@ -26,6 +56,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         showFourthQuestion();
     }
     
+    // When third question (or another event) is done, show the fourth question
     function showFourthQuestion() {
         console.log('showFourthQuestion called');  // Debugging line
     
@@ -46,16 +77,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
         showFifthQuestion();
     }
     
+    // When fourth question (or another event) is done, show the fifth question
     function showFifthQuestion() {
         document.getElementById("question5").classList.remove("hidden");
     }
-    
-    
-    
-    function showSixthQuestion() {
-        document.getElementById("question6").classList.remove("hidden");
-    }
-    
     
     function handleFifthQuestionSubmit(e) {
         e.preventDefault();
@@ -71,8 +96,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         showSixthQuestion();
     }
     
-    function showSeventhQuestion() {
-        document.getElementById("question7").classList.remove("hidden");
+    // When fifth question (or another event) is done, show the sixth question
+    function showSixthQuestion() {
+        document.getElementById("question6").classList.remove("hidden");
     }
     
     function handleSixthQuestionSubmit(e) {
@@ -89,10 +115,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
         showSeventhQuestion();
     }
     
-    function showEighthQuestion() {
-        document.getElementById("question8").classList.remove("hidden");
+    // When sixth question (or another event) is done, show the seventh question
+    function showSeventhQuestion() {
+        document.getElementById("question7").classList.remove("hidden");
     }
-    
     
     function handleSeventhQuestionSubmit(e) {
         e.preventDefault();
@@ -114,6 +140,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         showEighthQuestion();
     }
     
+    // When seventh question (or another event) is done, show the eighth question
+    function showEighthQuestion() {
+        document.getElementById("question8").classList.remove("hidden");
+    }
+    
     function handleEighthQuestionSubmit(e) {
         e.preventDefault();
     
@@ -128,6 +159,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         showNinthQuestion();
     }
 
+    // When eighth question (or another event) is done, show the ninth question
     function showNinthQuestion() {
         document.getElementById("question9").classList.remove("hidden");
     }
@@ -147,9 +179,26 @@ document.addEventListener('DOMContentLoaded', (event) => {
     
         // Hide the ninth question
         document.getElementById("question9").classList.add("hidden");
+
+        // Show the results
+        showResults();
+    }
+
+    function showResults() {
+        // Create a results message based on the score
+        let resultsMessage;
+        if (score >= 7) {
+            resultsMessage = 'Great job! You scored ' + score + ' out of 9.';
+        } else if (score >= 4) {
+            resultsMessage = 'Good effort! You scored ' + score + ' out of 9.';
+        } else {
+            resultsMessage = 'Better luck next time. You scored ' + score + ' out of 9.';
+        }
     
-        // Show the results or the next question
-        // showResults();
+        // Display the results message
+        let resultsElement = document.getElementById('results');
+        resultsElement.textContent = resultsMessage;
+        resultsElement.classList.remove('hidden');
     }
     
     // Add click event listeners to the image options in question 7
@@ -189,72 +238,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
             document.getElementById(radioButtonId).checked = true;
         });
     });
-    
-    function startQuiz() {
-        // Hide the introductory content
-        document.querySelector(".container").style.display = "none";
-    
-        // Show the form
-        document.getElementById("quizForm").style.display = "block";
-    
-        // Attach the form submission event listener
-        document.getElementById("quizForm").addEventListener("submit", function(event){
-            event.preventDefault();
-            const firstName = document.getElementById("firstName").value;
-            console.log(`First Name: ${firstName}`);
-            // Use the values as required, for example, to personalize the experience
-    
-            // Hide the form
-            document.getElementById("quizForm").style.display = "none";
-    
-            // Show the third question
-            showThirdQuestion(firstName); 
-        });
-    }
-    
-    // When second question (or another event) is done, show the third question
-    function showThirdQuestion(firstName) {
-        document.getElementById("question3").classList.remove("hidden");
-        document.getElementById("userNameDisplay").textContent = firstName;
-    }
-    
-    // When third question (or another event) is done, show the fourth question
-    function showFourthQuestion() {
-        document.getElementById("question4").classList.remove("hidden");
-    }
-    
-    // For the sixth question
-    document.getElementById("optionD6").addEventListener('change', function() {
-        if(this.checked) {
-            alert("Correct answer for Question 6: Micromotion between the implant and the abutment does not affect the MBL");
-        } else {
-            alert("Incorrect answer for Question 6. Try again.");
-        }
-    });
-    
-    // When fourth question (or another event) is done, show the fifth question
-    function showFifthQuestion() {
-        document.getElementById("question5").classList.remove("hidden");
-    }
-    
-    // When sixth question (or another event) is done, show the seventh question
-    function showSeventhQuestion() {
-        document.getElementById("question7").classList.remove("hidden");
-    }
-    
-    // When fifth question (or another event) is done, show the sixth question
-    function showSixthQuestion() {
-        document.getElementById("question6").classList.remove("hidden");
-    }
-    
-    
-    // When seventh question (or another event) is done, show the eighth question
-    function showEighthQuestion() {
-        document.getElementById("question8").classList.remove("hidden");
-    }
 });
-
-    
-    
-
-
