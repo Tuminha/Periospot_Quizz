@@ -10,8 +10,22 @@
     <div class="feedback-container" id="feedback-container">
         <img src="images/ralph-flute.gif" alt="Celebration Gif" class="celebration-gif" id="celebration-gif">
         <h1 id="congratulations-header">Oh, Dear 😅</h1>
-        <p id="score-paragraph">Oh, dear. You got  of 9. We have a lot of work to do 😅.   <span class="score-highlight" id="score-highlight">score 9</span> But no worries, you´ll see that with our recommendations you´ll improve your score. Press the yellow button below to get the best content for you.</p>
+        <p id="score-paragraph">Oh, dear. You got <span class="score-highlight" id="score-highlight"></span> of 9. We have a lot of work to do 😅. But no worries, you´ll see that with our recommendations you´ll improve your score. Press the yellow button below to get the best content for you.</p>        
         <a href="https://periospot.com/your-score-was-lests-just-say-it-was-%F0%9F%98%85/" id="recommended-content-button">Recommended Content</a>
     </div>
 </body>
+
+<script>
+    window.onload = function() {
+        // Parse the URL parameters
+        let params = new URLSearchParams(window.location.search);
+    
+        // Get the score from the URL parameters
+        let score = params.get('score');
+    
+        // Display the score on the page
+        document.getElementById('score-highlight').textContent = 'score ' + score;
+    }
+</script>
+
 </html>

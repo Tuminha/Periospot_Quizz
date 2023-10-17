@@ -69,6 +69,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // Gather the user's answer
         let selectedOption = document.querySelector("#question4 input[type='radio']:checked").value;
         console.log(`Selected option: ${selectedOption}`);
+
+        // Check if the answer is correct
+        if (selectedOption === 'Berglundh') {
+            score++;  // Increase score by 1
+        }
     
         // Hide the fourth question
         document.getElementById("question4").classList.add("hidden");
@@ -88,6 +93,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // Gather the user's answer
         let selectedOption = document.querySelector("#question5 input[type='radio']:checked").value;
         console.log(`Selected option: ${selectedOption}`);
+
+        // Check if the answer is correct
+        if (selectedOption === 'choiceD') {
+            score++;  // Increase score by 1
+        }
     
         // Hide the fifth question
         document.getElementById("question5").classList.add("hidden");
@@ -107,6 +117,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // Gather the user's answer
         let selectedOption = document.querySelector("#question6 input[type='radio']:checked").value;
         console.log(`Selected option: ${selectedOption}`);
+
+        // Check if the answer is correct
+        if (selectedOption === 'optionE6') {
+            score++;  // Increase score by 1
+        }
     
         // Hide the sixth question
         document.getElementById("question6").classList.add("hidden");
@@ -128,16 +143,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (selectedOptionElement) {
             let selectedOption = selectedOptionElement.value;
             console.log(`Selected option: ${selectedOption}`);
+    
+            // Check if the answer is correct
+            if (selectedOption === 'optionB7') {
+                score++;  // Increase score by 1
+            }
+    
+            // Hide the seventh question
+            document.getElementById("question7").classList.add("hidden");
+    
+            // Show the eighth question
+            showEighthQuestion();
         } else {
             console.log("No option selected");
             return;  // Stop the function if no option is selected
         }
-    
-        // Hide the seventh question
-        document.getElementById("question7").classList.add("hidden");
-    
-        // Show the eighth question
-        showEighthQuestion();
     }
     
     // When seventh question (or another event) is done, show the eighth question
@@ -149,14 +169,25 @@ document.addEventListener('DOMContentLoaded', (event) => {
         e.preventDefault();
     
         // Gather the user's answer
-        let selectedOption = document.querySelector("#question8 input[type='radio']:checked").value;
-        console.log(`Selected option: ${selectedOption}`);
+        let selectedOptionElement = document.querySelector("#question8 input[type='radio']:checked");
+        if (selectedOptionElement) {
+            let selectedOption = selectedOptionElement.value;
+            console.log(`Selected option: ${selectedOption}`);
     
-        // Hide the eighth question
-        document.getElementById("question8").classList.add("hidden");
+            // Check if the answer is correct
+            if (selectedOption === 'optionC8') {
+                score++;  // Increase score by 1
+            }
     
-        // Show the ninth question
-        showNinthQuestion();
+            // Hide the eighth question
+            document.getElementById("question8").classList.add("hidden");
+    
+            // Show the ninth question
+            showNinthQuestion();
+        } else {
+            console.log("No option selected");
+            return;  // Stop the function if no option is selected
+        }
     }
 
     // When eighth question (or another event) is done, show the ninth question
@@ -164,6 +195,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         document.getElementById("question9").classList.remove("hidden");
     }
 
+    // When eighth question (or another event) is done, show the ninth question
     function handleNinthQuestionSubmit(e) {
         e.preventDefault();
     
@@ -172,34 +204,34 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (selectedOptionElement) {
             let selectedOption = selectedOptionElement.value;
             console.log(`Selected option: ${selectedOption}`);
+    
+            // Check if the answer is correct
+            if (selectedOption === 'optionB9') {
+                score++;  // Increase score by 1
+            }
+    
+            // Hide the ninth question
+            document.getElementById("question9").classList.add("hidden");
+    
+            // Show the results
+            showResults();
         } else {
             console.log("No option selected");
             return;  // Stop the function if no option is selected
         }
-    
-        // Hide the ninth question
-        document.getElementById("question9").classList.add("hidden");
-
-        // Show the results
-        showResults();
     }
 
     function showResults() {
-        // Create a results message based on the score
-        let resultsMessage;
-        if (score >= 7) {
-            resultsMessage = 'Great job! You scored ' + score + ' out of 9.';
-        } else if (score >= 4) {
-            resultsMessage = 'Good effort! You scored ' + score + ' out of 9.';
+        // Redirect the user based on the score
+        if (score >= 6) {
+            window.location.href = 'scorehigh.html?score=' + score;
+        } else if (score >= 3) {
+            window.location.href = 'scoremedium.html?score=' + score;
         } else {
-            resultsMessage = 'Better luck next time. You scored ' + score + ' out of 9.';
+            window.location.href = 'scorelow.html?score=' + score;
         }
-    
-        // Display the results message
-        let resultsElement = document.getElementById('results');
-        resultsElement.textContent = resultsMessage;
-        resultsElement.classList.remove('hidden');
     }
+
     
     // Add click event listeners to the image options in question 7
     let imageOptions = document.querySelectorAll("#question7 .image-option");
