@@ -12,12 +12,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 200vh;
     margin: 0;
+    padding: 20px; /* Added padding to ensure content doesn't stick to the edges */
 }
 
 .container {
     text-align: center;
+    padding: 20px; /* Added padding to ensure content doesn't stick to the edges */
 }
 
 .logo img {
@@ -26,11 +28,11 @@ body {
 }
 
 h1, h2 {
-    margin: 10px 0;
+    margin: 20px 0; /* Increased vertical margin */
 }
 
 p {
-    margin: 15px 0;
+    margin: 20px 0; /* Increased vertical margin */
 }
 
 button {
@@ -49,7 +51,7 @@ button:hover {
 }
 
 .instruction {
-    margin-top: 10px;
+    margin-top: 20px; /* Increased vertical margin */
     font-size: 14px;
 }
 
@@ -139,11 +141,24 @@ input[type="submit"]:hover {
 
 /* 6TH QUESTION STYLING */
 
+/* Smaller and stylized image */
 .question-gif {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 15px auto;
+    max-width: 80%;  /* Reduced from 100% */
+    margin: 25px auto;  /* Increased margin for more spacing */
+    border-radius: 15px;  /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Slight shadow for depth */
+    display: block;  /* Added to center the image */
+}
+
+/* Improved spacing for content */
+.container {
+    padding: 20px;  /* Padding to ensure content doesn't stick to the edges */
+    text-align: center;
+}
+
+/* Additional Spacing Between Question Text and Choices */
+h2 {
+    margin: 20px 0;  /* Increased vertical margin */
 }
 
 /* 7TH QUESTION STYLING */
@@ -154,13 +169,25 @@ input[type="submit"]:hover {
     justify-content: space-between;
 }
 
+#question7 h2, #question9 h2 {
+    margin-bottom: 20px; /* adjust as needed */
+}
+
+#question7 h2, #question9 h2 {
+    margin-bottom: 20px; /* adjust as needed */
+}
+
+#question7 .image-option:first-child, #question9 .image-option:first-child {
+    margin-top: 20px; /* adjust as needed */
+}
+
 
 #question7.hidden { /* I almost went crazy on this one because I couldn't find the hidden class in the HTML */
     display: none;
 }
 
 .image-option {
-    flex: 0 0 calc(25% - 10px);
+    flex: 0 0 calc(20% - 10px); /* Reduced from 25% to 20% to make boxes smaller */
     margin: 5px;
     text-align: center;
     border: 1px solid #ddd;
@@ -168,6 +195,7 @@ input[type="submit"]:hover {
     cursor: pointer;
     transition: border-color 0.3s;
     overflow: hidden; /* Ensures the image fits within the block */
+
 }
 
 .image-option:hover {
@@ -175,7 +203,7 @@ input[type="submit"]:hover {
 }
 
 .image-option img {
-    max-width: 100%;
+    max-width: 90%; /* Reduced from 100% to 90% to adapt to the images inside them */
     height: auto;
     display: block;
     margin: 10px auto;
@@ -188,8 +216,8 @@ input[type="submit"]:hover {
 
 
 #question7 input[type="submit"] {
-    flex-basis: 25%;
-    margin-top: 20px; /* Adjust as needed */
+    width: 20%; /* Reduced width to make button smaller */
+    margin: 20px auto; /* Centered button and added margin to place it below image options */
     background-color: var(--primary-color);
     color: #fff;
     border: none;
@@ -211,53 +239,58 @@ input[type="submit"]:hover {
 
 /* 9TH QUESTION STYLING SIMILAR TO THE 7TH with div id="question9" */
 
+
 #question9 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
+#question9 .image-options {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 
-#question9.hidden { /* I almost went crazy on this one because I couldn't find the hidden class in the HTML */
+#question9.hidden {
     display: none;
 }
 
-.image-option {
-    flex: 0 0 calc(25% - 10px);
+#question9 .image-option {
+    flex: 0 0 calc(20% - 10px);
     margin: 5px;
     text-align: center;
     border: 1px solid #ddd;
     border-radius: 20px;
     cursor: pointer;
     transition: border-color 0.3s;
-    overflow: hidden; /* Ensures the image fits within the block */
+    overflow: hidden;
 }
 
-.image-option:hover {
+#question9 .image-option:hover {
     border-color: #666;
 }
 
-.image-option img {
-    max-width: 100%;
+#question9 .image-option img {
+    max-width: 90%;
     height: auto;
     display: block;
     margin: 10px auto;
 }
 
-.image-option.selected {
-    border: 3px solid #007BFF;  /* blue border for selected image */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* subtle shadow for emphasis */
+#question9 .image-option.selected {
+    border: 3px solid #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-
 #question9 input[type="submit"] {
-    flex-basis: 25%;
-    margin-top: 20px; /* Adjust as needed */
+    width: 15%;
+    margin: 20px 0;
     background-color: var(--primary-color);
     color: #fff;
     border: none;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 5px 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -267,7 +300,7 @@ input[type="submit"]:hover {
 }
 
 @media (max-width: 600px) {
-    .image-option {
+    #question9 .image-option {
         flex-basis: 100%;
     }
 }
@@ -295,13 +328,13 @@ input[type="submit"]:hover {
 #congratulations-header {
     color: #FFF;
     font-size: 24px;
-    margin-bottom: 10px;
+    margin-bottom: 20px; /* Increased vertical margin */
 }
 
 #score-paragraph {
     color: #FFF;
     font-size: 18px;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Increased vertical margin */
 }
 
 .score-highlight {
