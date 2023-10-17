@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     let score = 0;  // Initialize score
+    let incorrectAnswers = [];  // Initialize incorrect answers array
 
     // Add event listeners for the submit buttons of each question
     document.querySelector(".container button").addEventListener('click', startQuiz);
@@ -49,6 +50,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         let selectedOptions = Array.from(document.querySelectorAll("#question3 input[type='checkbox']:checked")).map(option => option.value);
         console.log(`Selected options: ${selectedOptions.join(', ')}`);
     
+    
         // Hide the third question
         document.getElementById("question3").classList.add("hidden");
     
@@ -71,7 +73,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         console.log(`Selected option: ${selectedOption}`);
 
         // Check if the answer is correct
-        if (selectedOption === 'Berglundh') {
+        if (selectedOption !== 'Berglundh') {
+            incorrectAnswers.push(4);  // Add question number to incorrect answers array
+        } else {
             score++;  // Increase score by 1
         }
     
@@ -95,7 +99,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         console.log(`Selected option: ${selectedOption}`);
 
         // Check if the answer is correct
-        if (selectedOption === 'choiceD') {
+        if (selectedOption !== 'None of the above') {
+            incorrectAnswers.push(5);  // Add question number to incorrect answers array
+        } else {
             score++;  // Increase score by 1
         }
     
@@ -119,7 +125,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         console.log(`Selected option: ${selectedOption}`);
 
         // Check if the answer is correct
-        if (selectedOption === 'optionE6') {
+        if (selectedOption !== 'E') {
+            incorrectAnswers.push(6);  // Add question number to incorrect answers array
+        } else {
             score++;  // Increase score by 1
         }
     
@@ -145,7 +153,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
             console.log(`Selected option: ${selectedOption}`);
     
             // Check if the answer is correct
-            if (selectedOption === 'optionB7') {
+            if (selectedOption !== 'B') {
+                incorrectAnswers.push(7);  // Add question number to incorrect answers array
+            } else {
                 score++;  // Increase score by 1
             }
     
@@ -175,7 +185,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
             console.log(`Selected option: ${selectedOption}`);
     
             // Check if the answer is correct
-            if (selectedOption === 'optionC8') {
+            if (selectedOption !== 'C') {
+                incorrectAnswers.push(8);  // Add question number to incorrect answers array
+            } else {
                 score++;  // Increase score by 1
             }
     
@@ -206,7 +218,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             console.log(`Selected option: ${selectedOption}`);
     
             // Check if the answer is correct
-            if (selectedOption === 'optionB9') {
+            if (selectedOption === 'B') {
                 score++;  // Increase score by 1
             }
     
@@ -222,13 +234,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     function showResults() {
+        // Convert the incorrectAnswers array to a string
+        const incorrectAnswersString = incorrectAnswers.join(',');
+    
         // Redirect the user based on the score
         if (score >= 6) {
-            window.location.href = 'scorehigh.html?score=' + score;
+            window.location.href = 'scorehigh.html?score=' + score + '&incorrect=' + incorrectAnswersString;
         } else if (score >= 3) {
-            window.location.href = 'scoremedium.html?score=' + score;
+            window.location.href = 'scoremedium.html?score=' + score + '&incorrect=' + incorrectAnswersString;
         } else {
-            window.location.href = 'scorelow.html?score=' + score;
+            window.location.href = 'scorelow.html?score=' + score + '&incorrect=' + incorrectAnswersString;
         }
     }
 
