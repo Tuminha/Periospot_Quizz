@@ -38,7 +38,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // When second question (or another event) is done, show the third question
     function showThirdQuestion(firstName) {
         document.getElementById("question3").classList.remove("hidden");
-        document.getElementById("userNameDisplay").textContent = firstName;
+        
+        // Get all elements with the class 'userNameDisplay'
+        let userNameDisplays = document.getElementsByClassName('userNameDisplay');
+        
+        // Loop through all elements and set their textContent to the user's first name
+        for(let i = 0; i < userNameDisplays.length; i++) {
+            userNameDisplays[i].textContent = firstName;
+        }
     }
 
     function handleThirdQuestionSubmit(e) {

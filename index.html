@@ -11,7 +11,7 @@
     <div class="container">
         <!-- First Question -->
         <div class="logo">
-            <img src="images/Logo blanco-01.png" alt="Periospot Logo">
+            <img src="images/Logo_blanco-01.png" alt="Periospot Logo">
             <h1>Periospot</h1>
         </div>
         <h2>Do you want to test your skills?</h2>
@@ -24,7 +24,7 @@
 
     <form id="quizForm" style="display: none;">
         <!-- Second Question -->
-        <label for="firstName">Before we start, can we get your first name?</label>
+        <label for="firstName">2. Before we start, can we get your first name?</label>
         <input type="text" id="firstName" name="firstName" placeholder="Type your answer here...">
         <br><br>
          
@@ -33,7 +33,7 @@
 
     <!-- Third Question -->
     <div id="question3" class="hidden">
-        <label for="areasOfInterest">What's your area of interest, <span id="userNameDisplay"></span>?</label>
+        <label for="periodontics">3. What's your area of interest, <span id="userNameDisplay1" class="userNameDisplay"></span>?</label>
         <div class="choices">
         <input type="checkbox" id="periodontics" name="interest" value="Periodontics">
         <label for="periodontics">Periodontics</label>
@@ -62,7 +62,7 @@
 
     <!-- Fourth Question -->
     <div id="question4" class="hidden">
-        <p>Nice to meet you <span id="userNameDisplay"></span>, thanks for taking the time to test your skills. Now, who was the first researcher that described biological width in implants?</p>
+        <p>4. Nice to meet you <span id="userNameDisplay2" class="userNameDisplay"></span>, thanks for taking the time to test your skills. Now, who was the first researcher that described biological width in implants?</p>
         <div class="choices">
             <input type="radio" id="abrahamsson" name="researcher" value="Abrahamsson">
             <label for="abrahamsson">A. Abrahamsson</label>
@@ -85,7 +85,7 @@
 
     <!-- Fifth Question -->
     <div id="question5" class="hidden">
-        <h2>Immediate implants...</h2>
+        <h2>5. Immediate implants...</h2>
         <div class="choices">
             <input type="radio" id="choiceA" name="immediateImplants" value="Are dangerous">
             <label for="choiceA">A) Are dangerous</label>
@@ -108,8 +108,8 @@
 
     <!-- Sixth Question -->
     <div id="question6" class="quiz-question hidden question5">
-        <h2>Regarding marginal bone loss, one of the below statements is true:</h2>
-        <img src="images/QuickTime Player - Ericsson 2.mov 2023-10-16 at 12.49.38 PM.gif" alt="Gif relating to marginal bone loss" class="question-gif">
+        <h2>6. Regarding marginal bone loss, one of the below statements is true:</h2>
+        <img src="images/QuickTime_Player_Ericsson_2.mov_2023-10-16_at_12.49.38_PM.gif" alt="Gif relating to marginal bone loss" class="question-gif">
         <div class="choices">
             <input type="radio" id="optionA6" name="q6" value="A">
             <label for="optionA6">A) Is not important from a biological and clinical point of view</label>
@@ -132,7 +132,7 @@
     
     <!-- Seventh Question -->
     <div id="question7" class="quiz-question hidden">
-        <h2>7. So far so good <span id="userNameDisplay"></span>, but let’s go with an easy one: What is the recommended distance between two implants?</h2>
+        <h2>7. So far so good <span id="userNameDisplay3" class="userNameDisplay"></span>, but let’s go with an easy one: What is the recommended distance between two implants?</h2>
         <div class="image-option" data-answer="A" data-radio="optionA7">
             <img src="images/1mm.png" alt="1 mm option">
             <p>A) 1 mm</p>
@@ -179,7 +179,7 @@
 
     <!-- Ninth Question -->
     <div id="question9" class="quiz-question hidden">
-        <h2>9. What is the ideal thickness of the buccal bone wall after placing an implant, <span id="userNameDisplay"></span>?</h2>
+        <h2>9. What is the ideal thickness of the buccal bone wall after placing an implant, <span id="userNameDisplay4" class="userNameDisplay"></span>?</h2>
         <div class="image-option" data-answer="A" data-radio="optionA9">
             <img src="images/buccal1mm.png" alt="1 mm option">
             <p>A) 1 mm</p>
@@ -189,7 +189,7 @@
             <p>B) 2 mm</p>
         </div>
         <div class="image-option" data-answer="C" data-radio="optionC9">
-            <img src="images/softissue.png" alt="No bone needed. Soft tissue is ok option">
+            <img src="images/softtissue.png" alt="No bone needed. Soft tissue is ok option">
             <p>C) No bone needed. Soft tissue is ok.</p>
         </div>
         <div class="image-option" data-answer="D" data-radio="optionD9">
@@ -197,13 +197,10 @@
             <p>D) 0.5 mm</p>
         </div>
         <!-- Hidden radio buttons -->
-        <div>
-            <input type="radio" id="optionA9" name="q9" value="A" hidden>
-            <input type="radio" id="optionB9" name="q9" value="B" hidden>
-            <input type="radio" id="optionC9" name="q9" value="C" hidden>
-            <input type="radio" id="optionD9" name="q9" value="D" hidden>
-            
-        </div>
+        <input type="radio" id="optionA9" name="q9" value="A" hidden>
+        <input type="radio" id="optionB9" name="q9" value="B" hidden>
+        <input type="radio" id="optionC9" name="q9" value="C" hidden>
+        <input type="radio" id="optionD9" name="q9" value="D" hidden>
         <input type="submit" value="Submit">
     </div>
     <br><br>
