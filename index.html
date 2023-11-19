@@ -22,7 +22,7 @@
 
     
 
-    <form id="quizForm" style="display: none;">
+    <form id="quizForm" class="center-content" style="display: none;">
         <!-- Second Question -->
         <label for="firstName">2. Before we start, can we get your first name?</label>
         <input type="text" id="firstName" name="firstName" placeholder="Type your answer here...">
@@ -32,7 +32,7 @@
     </form>
 
     <!-- Third Question -->
-    <div id="question3" class="hidden">
+    <div id="question3" class="center-content hidden">
         <label for="periodontics">3. What's your area of interest, <span id="userNameDisplay1" class="userNameDisplay"></span>?</label>
         <div class="choices">
         <input type="checkbox" id="periodontics" name="interest" value="Periodontics">
@@ -61,8 +61,8 @@
     <br><br>
 
     <!-- Fourth Question -->
-    <div id="question4" class="hidden">
-        <p>4. Nice to meet you <span id="userNameDisplay2" class="userNameDisplay"></span>, thanks for taking the time to test your skills. Now, who was the first researcher that described biological width in implants?</p>
+    <div id="question4" class="center-content hidden">
+        <h2>4. Nice to meet you <span id="userNameDisplay2" class="userNameDisplay"></span>, thanks for taking the time to test your skills. Now, who was the first researcher that described biological width in implants?</h2>
         <div class="choices">
             <input type="radio" id="abrahamsson" name="researcher" value="Abrahamsson">
             <label for="abrahamsson">A. Abrahamsson</label>
@@ -84,7 +84,7 @@
     <br><br>
 
     <!-- Fifth Question -->
-    <div id="question5" class="hidden">
+    <div id="question5" class="center-content hidden">
         <h2>5. Immediate implants...</h2>
         <div class="choices">
             <input type="radio" id="choiceA" name="immediateImplants" value="Are dangerous">
@@ -132,7 +132,9 @@
     
     <!-- Seventh Question -->
     <div id="question7" class="quiz-question hidden">
+    
         <h2>7. So far so good <span id="userNameDisplay3" class="userNameDisplay"></span>, but let’s go with an easy one: What is the recommended distance between two implants?</h2>
+    
         <div class="image-option" data-answer="A" data-radio="optionA7">
             <img src="images/1mm.png" alt="1 mm option">
             <p>A) 1 mm</p>
@@ -149,17 +151,19 @@
             <img src="images/bridge.png" alt="Tooth-borne bridge option">
             <p>D) We should avoid implants and always perform a tooth-borne bridge</p>
         </div>
+    
+       
         <!-- Hidden radio buttons -->
         <input type="radio" id="optionA7" name="q7" value="A" hidden>
         <input type="radio" id="optionB7" name="q7" value="B" hidden>
         <input type="radio" id="optionC7" name="q7" value="C" hidden>
         <input type="radio" id="optionD7" name="q7" value="D" hidden>
         <input type="submit" value="Submit">
-    </div>
+        </div>
     <br><br>
 
     <!-- Eighth Question -->
-    <div id="question8" class="quiz-question hidden question5">
+    <div id="question8" class="center-content quiz-question hidden question5">
         <h2>8. In which cases would you place an implant in a subcrestally position?</h2>
         <div class="choices">
             <input type="radio" id="optionA8" name="q8" value="A">
