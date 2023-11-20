@@ -37,7 +37,7 @@ h1, h2 {
 }
 
 p {
-    margin: 30px 0; /* Increased vertical margin */
+    margin: 10px 0; /* Increased vertical margin */
 }
 
 button {
@@ -327,8 +327,8 @@ input[type="submit"]:hover {
     }
 
     .image-option img {
-        max-width: 80%; /* Adjust image width to allow for some padding */
-        height: auto; /* Maintain aspect ratio */
+        max-width: 30%;
+        max-height: fit-content;
     }
 
     #question7, #question9 {
@@ -340,6 +340,12 @@ input[type="submit"]:hover {
 
     #question7 input[type="submit"], #question9 input[type="submit"] {
         width: 40%; 
+    }
+
+    p {
+        margin-bottom: 50px;
+        margin-left: 35px;
+        margin-right: 35px;
     }
 
 }

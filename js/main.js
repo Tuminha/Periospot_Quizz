@@ -13,6 +13,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
     document.querySelector("#question8 input[type='submit']").addEventListener('click', handleEighthQuestionSubmit);
     document.querySelector("#question9 input[type='submit']").addEventListener('click', handleNinthQuestionSubmit);
 
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            // Prevent the default action to stop scrolling when pressing Enter
+            event.preventDefault();
+    
+            // Find the form that contains the currently focused element
+            let form = document.activeElement.form;
+    
+            // If a form was found, submit it
+            if (form) {
+                form.dispatchEvent(new Event('submit'));
+            }
+        }
+    });
+    
     function startQuiz() {
         // Hide the introductory content
         document.querySelector(".container").style.display = "none";
@@ -20,7 +36,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // Show the form
         document.getElementById("quizForm").style.display = "block";
     
-        // Attach the form submission event listener
+        // Attach the form submission event listener to the second form
         document.getElementById("quizForm").addEventListener("submit", function(event){
             event.preventDefault();
             const firstName = document.getElementById("firstName").value;

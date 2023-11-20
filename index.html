@@ -16,7 +16,9 @@
         </div>
         <h2>Do you want to test your skills?</h2>
         <p>Depending on the results, we can recommend you articles, videos, online learning, books, ebooks, and other content.</p>
-        <button onclick="startQuiz()">Let's start!</button>
+        <form onsubmit="event.preventDefault(); startQuiz();">
+            <button type="submit">Let's start!</button>
+        </form>
         <p class="instruction">Press Enter &rarr;</p>
     </div>
 
