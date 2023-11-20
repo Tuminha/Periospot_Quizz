@@ -6,13 +6,14 @@
 2. [Overview](#overview)
 3. [Features](#features)
 4. [User Experience (UX)](#user-experience-(ux))
-5. [Technology Stack](#technology-stack)
-6. [Testing](#testing)
-7. [Bugs and Resolutions](#bugs-and-resolutions)
-8. [Deployment](#deployment)
-9. [Citation of Sources](#citation-of-sources)
-10. [Acknowledgements](#acknowledgements)
-11. [Contact & Support](#contact-&-support)
+5. [Surface](#surface)
+6. [Technology Stack](#technology-stack)
+7. [Testing](#testing)
+8. [Bugs and Resolutions](#bugs-and-resolutions)
+9. [Deployment](#deployment)
+10. [Citation of Sources](#citation-of-sources)
+11. [Acknowledgements](#acknowledgements)
+12. [Contact & Support](#contact-&-support)
 
 
 
@@ -43,11 +44,11 @@ Responsive design that adapts to various screen sizes, ensuring a seamless exper
 
 Home Page on a small screen
 
-![Home Page on a small screen](documentation/start-mobile.png)
+![Home Page displayed on a small screen](documentation/start-mobile.png)
 
 Home Page on a large screen
 
-![Home Page on a large screen](documentation/start.png)
+![Home Page displayed on a large screen](documentation/start.png)
 
 The Home Page includes:
 
@@ -59,7 +60,7 @@ A compelling introduction invites dental professionals to engage with the quiz, 
 Username Input
 A user-friendly input field prompts users to enter their name, which personalizes the experience. An error prompt ensures users cannot proceed without providing a valid username.
 
-![Username Input](documentation/question-2-name.png)
+![Username Input field](documentation/question-2-name.png)
 
 Start Button
 A prominently placed Start Button initiates the quiz. Its design includes accessibility features like keyboard focus and hover effects for better user interaction.
@@ -81,7 +82,7 @@ Results and Feedback
 
 The quiz concludes with a results page that provides immediate feedback on the user's performance, complete with encouragement and suggestions for improvement or further learning.
 
-![Results and Feedback](documentation/score-medium-page.png)
+![Results and Feedback page](documentation/score-medium-page.png)
 
 
 Accessibility
@@ -165,7 +166,7 @@ Arial: The primary typeface for questions and content, offering a balance betwee
 Sans-serif: Used for supplementary text, providing a modern and clean aesthetic that complements the primary typefaces.
 This combination of typefaces ensures a hierarchical structure that guides users naturally through the quiz flow, from questions to answers and results.
 
-![Example Image](documentation/typo.png)
+![Example of Typography](documentation/typo.png)
 
 The thoughtful application of these design elements creates an environment that is not only visually engaging but also conducive to focus and learning, reflecting the educational goals of Periospot Quiz.
 
@@ -180,6 +181,11 @@ Access to illustrations in (documentation/illustrations)
 
 The animation on question 6 was produced on Adobe After effects and then exported to a .gif. Full animation here (documentation/animations)
 
+## Technology Stack
+- HTML (index.html, scorehigh.html, scorelow.html, scoremedium.html)
+- CSS (styles.css)
+- JavaScript (main.js, score.js)
+
 
 ## Testing
 
@@ -191,7 +197,7 @@ Validator Testing
 
 The HTML code of the application, including index.html, scorehigh.html, scorelow.html, and scoremedium.html, has been tested using the Official W3C Markup Validator. The validator confirmed that all documents were checked and found to have no errors or warnings, ensuring adherence to web standards and compatibility across browsers.
 
-![Example Image](documentation/wec.png)
+![HTML Validation Result](documentation/wec.png)
 
 
 
@@ -199,7 +205,7 @@ The HTML code of the application, including index.html, scorehigh.html, scorelow
 
 The stylesheet styles.css passed through the Official W3C CSS Validator for CSS level 3 + SVG. The validator returned a congratulatory message, indicating no errors were found, which confirms the quality and standards-compliance of the CSS code.
 
-![Example Image](documentation/w3ccss.png)
+![CSS Validation Result](documentation/w3ccss.png)
 
 
 ### JavaScript Validation:
@@ -219,7 +225,7 @@ While 37 warnings were reported, these were related to the use of ES6 features s
 The successful passing of the code through various validators without errors or warnings is a testament to the meticulous development process and adherence to modern web standards. This ensures that Periospot Quiz delivers a consistent and reliable user experience.
 
 
-![Example Image](documentation/jshint.png)
+![JavaScript Validation Result](documentation/jshint.png)
 
 
 
@@ -301,6 +307,8 @@ The Periospot Quiz has been manually tested across various browsers to ensure br
 #### Device Compatibility and Responsiveness
 
 The application's responsiveness was rigorously tested using Chrome and Edge Developer Tools to simulate a range of devices. The Periospot Quiz is confirmed to be responsive and provides an optimal user experience for screens as small as 320px in width.
+
+![Device Compatibility and Responsiveness Test](documentation/googledevtool.png)
 
 In addition to virtual emulations, physical testing was conducted on various devices, including smartphones and tablets, across different operating systems. Participants, including dental professionals and students, accessed the quiz without encountering functional or responsive issues. The application's compatibility with assistive technologies such as screen readers was also verified, ensuring inclusivity for users with disabilities.
 
@@ -386,13 +394,6 @@ I would like to express my profound gratitude to the following:
 - The Code Institute mentor team: While I have not sought direct assistance from them for this project, their work is greatly appreciated and I look forward to engaging with them in future projects.
 - My commitment to self-reliance in this project was a challenge I set for myself, and I am grateful for the opportunity to learn through this process.
 
-
-[![Example Image](documentation/googledevtool.png)
-
-## Technology Stack
-- HTML (index.html, scorehigh.html, scorelow.html, scoremedium.html)
-- CSS (styles.css)
-- JavaScript (main.js, score.js)
 
 
 ## Contact & Support
