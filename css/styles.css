@@ -321,9 +321,14 @@ input[type="submit"]:hover {
 
 @media (max-width: 600px) {
     .image-option {
-        flex: 1 0 100%; /* Take full width on small screens */
-        max-width: 100%; /* Make sure it doesn't exceed the width of the screen */
-        margin: 5px 0; /* Adjust margin to only top and bottom */
+        flex: 1 0 100%;
+        max-width: 100%;
+        margin: 5px 0;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: space-around;
+        align-items: center;
     }
 
     .image-option img {
@@ -445,3 +450,80 @@ input[type="submit"]:hover {
         transform: translate(-50%, -50%);
     }
 }
+
+/* Media query for smaller screens 375
+*/
+
+@media (max-width: 375px) {
+    .container {
+        padding: 10px;
+        margin: 10px;
+    }
+    .logo img {
+        width: 300px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    p {
+        font-size: 14px;
+    }
+    button {
+        font-size: 14px;
+    }
+    .instruction {
+        font-size: 12px;
+    }
+    .choices label {
+        font-size: 12px;
+    }
+    .question-gif {
+        max-width: 300px;
+    }
+    #question6 .choices {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    #question7 .image-option:first-child, #question9 .image-option:first-child {
+        margin-top: 10px;
+    }
+    #question7 input[type="submit"], #question9 input[type="submit"] {
+        width: 50%;
+    }
+    #question7, #question9 {
+        padding: 10px;
+    }
+    #question7 h2, #question9 h2 {
+        margin-bottom: 10px;
+    }
+    #question7 .image-option img, #question9 .image-option img {
+        max-width: 70%;
+    }
+    #question7 input[type="submit"], #question9 input[type="submit"] {
+        width: 70%;
+    }
+    #question7 input[type="submit"]:hover, #question9 input[type="submit"]:hover {
+        background-color: var(--primary-color);
+    }
+    #question7 input[type="submit"], #question9 input[type="submit"] {
+        width: 70%;
+    }
+    #question7 input[type="submit"]:hover, #question9 input[type="submit"]:hover {
+        background-color: var(--primary-color);
+    }
+    #question7 input[type="submit"], #question9 input[type="submit"] {
+        width: 70%;
+    }
+    #question7 input[type="submit"]:hover, #question9 input[type="submit"]:hover {
+        background-color: var(--primary-color);
+    }
+    #question7 input[type="submit"], #question9 input[type="submit"] {
+        width: 70%;
+    }
+    #question7 input[type="submit"]:hover, #question9 input[type="submit"]:hover {
+        background-color: var(--primary-color);
+    }
+}
+
