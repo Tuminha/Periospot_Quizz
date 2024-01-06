@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let score = 0;  // Initialize score
     let incorrectAnswers = [];  // Initialize incorrect answers array
 
+
     // Add event listeners for the submit buttons of each question
     document.querySelector(".container button").addEventListener('click', startQuiz);
 
